@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.819a248c.css",
+    "main.js": "/static/js/main.b20558e8.js",
+    "static/js/787.7e0b23c5.chunk.js": "/static/js/787.7e0b23c5.chunk.js",
+    "static/media/letraPok.png": "/static/media/letraPok.88ce61a9920c2a53e251.png",
+    "static/media/pokeBolaUniv.webp": "/static/media/pokeBolaUniv.c2e3b62034f7be073cc6.webp",
+    "index.html": "/index.html",
+    "main.819a248c.css.map": "/static/css/main.819a248c.css.map",
+    "main.b20558e8.js.map": "/static/js/main.b20558e8.js.map",
+    "787.7e0b23c5.chunk.js.map": "/static/js/787.7e0b23c5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.819a248c.css",
+    "static/js/main.b20558e8.js"
+  ]
+}
