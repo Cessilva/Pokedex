@@ -5,17 +5,18 @@ const fetchOnePokemon = async (id) => {
     const data = await res.json();
     console.log(data);
     const pokemon = {
-      img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
-      imgJuego: data.sprites.front_default,
-      imgCvg: data.sprites.other.dream_world.front_default,
       nombre: data.name,
-      experiencia: data.base_experience,
-      hp: data.stats[0].base_stat,
+      altura: data.height,
+      peso: data.weight,
+      movimientos: data.moves,
+      habilidades: data.abilities,
+      tipos: data.types,
       ataque: data.stats[1].base_stat,
       defensa: data.stats[2].base_stat,
       especial: data.stats[3].base_stat,
+      img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
     };
-    console.log(pokemon)
+    return pokemon
   } catch (error) {
     console.log(error);
   }

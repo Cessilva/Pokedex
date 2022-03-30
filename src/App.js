@@ -1,17 +1,16 @@
 
 import ContenedorCards from './Components/ContenedorCards/ContenedorCards'
-import './App.css'
 import { useEffect, useState } from 'react';
 import { fetchAllPokemon } from './API/pokeapi'
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import PokemonLogo from './Components/PokemonLogo/PokemonLogo';
 import PaginationComp from './Components/PaginationComp/PaginationComp';
+import './App.css'
 
 const introSong = ['Tengo que ser siempre el mejor!!!','mejor que nadie más...','atraparlos mi prueba es... ', 'entrenarlos mi ideal !!!']
 function App() {
   const [data, setData] =useState([])
-
   const [counter, setCounter]= useState(0)
   const [textCounter, setTextCounter]=useState('')
   const [page, setPage]=useState(1)
@@ -24,7 +23,6 @@ const handleSkipPreviousClick = () =>{
     setCounter(counter+1)
   }
 }
-
 const handleFastRewindClick = () =>{
   if (page !== 1){
     setPage(page-1)
@@ -46,30 +44,30 @@ const handleSkipNextClick = () =>{
     setCounter(counter+1)
   }
 }
-  const getAllPokemons = () => fetchAllPokemon(page).then((response)=>{
-    setPageMax(response.countTotal)
-    setData(response.results);
-  }).catch((error)=>
-  console.log(error))
+const getAllPokemons = () => fetchAllPokemon(page).then((response)=>{
+  setPageMax(response.countTotal)
+  setData(response.results);
+}).catch((error)=>
+console.log(error))
 
-  useEffect(()=>{
-    if(counter >8 ){
-      setTextCounter('...')
-      getAllPokemons();
-    }else{
-      setTextCounter(introSong[parseInt(counter/2)])
-    }
-    while (counter<=8) {
-      const interval = setInterval(()=>{
-        setCounter(counter+2)
-      }, 2000);
-      return () => {
-        clearInterval(interval);
-      };
-    } 
-  },[counter])
+useEffect(()=>{
+  if(counter >8 ){
+    setTextCounter('...')
+    getAllPokemons();
+  }else{
+    setTextCounter(introSong[parseInt(counter/2)])
+  }
+  while (counter<=8) {
+    const interval = setInterval(()=>{
+      setCounter(counter+2)
+    }, 2000);
+    return () => {
+      clearInterval(interval);
+    };
+  } 
+},[counter])
 
-  return (
+return (
     <div className='body'>
       {data.length > 0 ? <PaginationComp 
       handleSkipPreviousClick={handleSkipPreviousClick} 
