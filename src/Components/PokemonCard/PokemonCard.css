@@ -19,7 +19,11 @@
    margin: auto auto 1em auto;
    font-family: 'Comfortaa';
  }
-.imagen:hover {filter: grayscale(80%);}
+.imagen:hover {
+  filter: grayscale(80%);
+  cursor: pointer;
+}
+
 .btn-grad:hover {
    background-position: right center; /* change the direction of the change here */
    color: #fff;
