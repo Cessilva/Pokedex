@@ -11,7 +11,6 @@ export default function SimpleDialog(props) {
       onClose(selectedValue);
     };
     const getOnePokemonExtraData = () => fetchOnePokemon(props.pokemonId).then((response)=>{
-        console.log('getOnePokemonExtraData',response)
         setDataDialog(response)
     }).catch((error)=>
     console.log(error))

@@ -1,9 +1,7 @@
 const fetchOnePokemon = async (id) => {
   try {
-    console.log('fetchOnePokemon',id);
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await res.json();
-    console.log(data);
     const pokemon = {
       nombre: data.name,
       altura: data.height,
@@ -37,17 +35,6 @@ const fetchAllPokemon = async (page) => {
     }
   };
 
-  const fetchOnePokemonSpecie = async (id) => {
-    try {
-      console.log('fetchOnePokemonSpecieId',id);
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
-      const data = await res.json();
-      console.log(data);
-      
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
 
-export { fetchOnePokemon, fetchAllPokemon, fetchOnePokemonSpecie};
+export { fetchOnePokemon, fetchAllPokemon};
