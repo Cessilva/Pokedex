@@ -46,7 +46,6 @@ SimpleDialog.propTypes = {
 };
 
 export default function PokemonCard(pokemon) {
-  console.log('PokemonCardData',pokemon)
   const [open, setOpen] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState(emails[1]);
   const handleClickOpen = () => {
@@ -81,7 +80,7 @@ export default function PokemonCard(pokemon) {
         alt={pokemon.pokemon.name}
       />
       <CardActions disableSpacing>
-          <button onClick={handleClickOpen} class='btn-grad'>Más detalles</button>
+          <button onClick={handleClickOpen} className='btn-grad'>Más detalles</button>
       </CardActions>
     </Card>
     <SimpleDialog

@@ -30,7 +30,7 @@ const fetchAllPokemon = async (page) => {
           let generateId=element.url.split('/').filter((el)=>el!=='').pop()
           return {...element, id: generateId, image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${generateId}.png`}
       });
-      return newDta;
+      return {results:newDta, countTotal:parseInt(data.count/20)+1};
     } catch (error) {
       console.log(error);
     }

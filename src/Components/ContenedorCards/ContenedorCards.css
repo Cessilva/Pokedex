@@ -1,6 +1,7 @@
 .grid{
     display: grid;
-    margin: auto;
+    margin: auto auto 5% auto;
+    
 }
 /* Large desktop */
 @media (min-width: 1024px) { 
