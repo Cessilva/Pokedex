@@ -18,7 +18,6 @@ function App() {
   const [pageMax, setPageMax]=useState(0)
 
 const handleSkipPreviousClick = () =>{
-  console.log('handleSkipPreviousCl')
   if (page !== 1){
     setPage(1)
     setData([])
@@ -34,9 +33,7 @@ const handleFastRewindClick = () =>{
   }
 }
 const handleFastForwardClick = () =>{
-  console.log('handleFastForwardCli')
   if (page < pageMax){
-    console.log('page es menor que 130')
     setPage(page+1)
     setData([])
     setCounter(counter+1)
