@@ -26,25 +26,27 @@ export default function SimpleDialog(props) {
         <>
         <img src={dataDialog.img} alt="PokemonImg"/>
         <div class="contentDialogPokemon">
-        <h1>{dataDialog.nombre.charAt(0).toUpperCase() + dataDialog.nombre.slice(1)}</h1>
-        <div className='abilmoves'>
-            Habilidades:
-            <ol>
-                <li>Great look</li>
-                <li> Good specs </li>
-                <li> Good Camera </li>
-            </ol>
-            Movimientos:
-                <ol>
-                <li>Great look</li>
-                <li> Good specs </li>
-                <li> Good Camera </li>
-            </ol>
-        </div>
-            <div class="priceDialogPokemon">
-            <button className='ataque'> Ataque: {dataDialog.ataque} </button>
-            <button className='defensa'> Defensa:{dataDialog.defensa}  </button>
-            <button className='especial'> Especial:{dataDialog.especial}  </button>
+            <h1>{dataDialog.nombre.charAt(0).toUpperCase() + dataDialog.nombre.slice(1)}</h1>
+            <h3>Peso: {dataDialog.peso} kg , Altura: {dataDialog.altura} m </h3>
+            <div className='abilmoves'>
+                <div>
+                Habilidades:
+                    {dataDialog.habilidades.map((habilidad)=>{
+                        return ` ${habilidad.ability.name.charAt(0).toUpperCase()  + habilidad.ability.name.slice(1)},`
+                    })}
+                </div>
+                <br/>
+                <div className='movimientos'>
+                Movimientos:
+                    {dataDialog.movimientos.map((movimiento)=>{
+                        return ` ${movimiento.move.name.charAt(0).toUpperCase() + movimiento.move.name.slice(1)},`
+                    })}
+                </div>
+            </div>
+                <div class="priceDialogPokemon">
+                <button className='ataque'> Ataque: {dataDialog.ataque} </button>
+                <button className='defensa'> Defensa: {dataDialog.defensa}  </button>
+                <button className='especial'> Especial: {dataDialog.especial}  </button>
             </div>
         </div>
         </>
