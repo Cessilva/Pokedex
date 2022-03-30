@@ -46,7 +46,6 @@ const handleSkipNextClick = () =>{
     setCounter(counter+1)
   }
 }
-  
   const getAllPokemons = () => fetchAllPokemon(page).then((response)=>{
     setPageMax(response.countTotal)
     setData(response.results);
@@ -94,7 +93,6 @@ const handleSkipNextClick = () =>{
     </div>
   );
 }
-
 export default App;
 
 
